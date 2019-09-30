@@ -44,6 +44,21 @@ class App extends React.Component {
     })
   }
 
+  toggleItem = id => {
+    this.setState({
+      todo: this.state.todo.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            completed: !item.completed
+          }
+        }
+        else {
+          return item;
+        }
+      })
+    })
+  }
 
 
   render() {
@@ -52,7 +67,7 @@ class App extends React.Component {
       <div>
         <h1>To Do List</h1>
         <TodoForm handleChanges={this.handleChanges} addItem={this.addItem} submitItem={this.submitItem} clearCompleted={this.clearCompleted}/>
-        <TodoList todo={this.state.todo}/>
+        <TodoList todo={this.state.todo} toggleItem={this.toggleItem}/>
       </div>
     );
   }
