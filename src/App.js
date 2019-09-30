@@ -2,23 +2,7 @@ import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
-const todoData = [
-  {
-    task: 'Organize Garage',
-    id: Date.now(),
-    completed: false
-  },
-  {
-    task: 'Bake Cookies',
-    id: Date.now(),
-    completed: false
-  },
-  {
-    task: 'Feed Cat',
-    id: Date.now(),
-    completed: false
-  }
-];
+const todoData = [];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -54,13 +38,20 @@ class App extends React.Component {
     this.addItem(this.state.item)
   }
 
+  clearCompleted = () => {
+    this.setState({
+      todo: this.state.todo.filter(item => !item.completed)
+    })
+  }
+
 
 
   render() {
     console.log(this.state)
     return (
       <div>
-        <TodoForm handleChanges={this.handleChanges} addItem={this.addItem} submitItem={this.submitItem}/>
+        <h1>To Do List</h1>
+        <TodoForm handleChanges={this.handleChanges} addItem={this.addItem} submitItem={this.submitItem} clearCompleted={this.clearCompleted}/>
         <TodoList todo={this.state.todo}/>
       </div>
     );
