@@ -18,6 +18,13 @@ button {
     color: white;
     background: #2d2d37;
     border: 1px solid white;
+    margin: 8px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+button:hover{
+    color: #2d2d37;
+    background: white;
 }
 
 .app-container {
@@ -41,7 +48,7 @@ background-color: #2d2d37;
 }
 
 .item {
-    background-color: plum;
+    background-color: rgb(221,160,221, 0.5);
     padding: 1% 5%;
     width: 250px;
     text-align: center;
