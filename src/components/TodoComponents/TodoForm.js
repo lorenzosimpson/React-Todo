@@ -13,7 +13,7 @@ class TodoForm extends React.Component {
         return(
             <>
                 <form onSubmit={this.props.submitItem}>
-                <input 
+                <input className='input'
                     type="text"
                     value={this.item}
                     name="item"

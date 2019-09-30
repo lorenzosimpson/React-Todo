@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './components/TodoComponents/Todo.css';
 
 const todoData = [];
 
@@ -64,10 +65,12 @@ class App extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div>
-        <h1>To Do List</h1>
-        <TodoForm handleChanges={this.handleChanges} addItem={this.addItem} submitItem={this.submitItem} clearCompleted={this.clearCompleted}/>
-        <TodoList todo={this.state.todo} toggleItem={this.toggleItem}/>
+      <div className='app'>
+        <div className='app-container'>
+          <h1>To Do List</h1>
+          <TodoForm handleChanges={this.handleChanges} addItem={this.addItem} submitItem={this.submitItem} clearCompleted={this.clearCompleted}/>
+          <TodoList todo={this.state.todo} toggleItem={this.toggleItem}/>
+        </div>
       </div>
     );
   }
