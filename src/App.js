@@ -31,6 +31,12 @@ class App extends React.Component {
     }
   }
 
+  handleChanges = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
 
   addItem = itemName => {
     const newItem = {
@@ -43,12 +49,18 @@ class App extends React.Component {
     })
   }
 
+  submitItem = e => {
+    e.preventDefault();
+    this.addItem(this.state.item)
+  }
+
+
 
   render() {
     console.log(this.state)
     return (
       <div>
-        <TodoForm addItem={this.addItem}/>
+        <TodoForm handleChanges={this.handleChanges} addItem={this.addItem} submitItem={this.submitItem}/>
         <TodoList todo={this.state.todo}/>
       </div>
     );
