@@ -12,6 +12,11 @@ const todoData = [
     task: 'Bake Cookies',
     id: Date.now(),
     completed: false
+  },
+  {
+    task: 'Feed Cat',
+    id: Date.now(),
+    completed: false
   }
 ];
 
@@ -25,11 +30,25 @@ class App extends React.Component {
       todo: todoData
     }
   }
+
+
+  addItem = itemName => {
+    const newItem = {
+      task: itemName,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      todo: [...this.state.todo, newItem]
+    })
+  }
+
+
   render() {
-    console.log(this.state.todo)
+    console.log(this.state)
     return (
       <div>
-        <TodoForm />
+        <TodoForm addItem={this.addItem}/>
         <TodoList todo={this.state.todo}/>
       </div>
     );
