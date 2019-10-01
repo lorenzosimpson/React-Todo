@@ -83,6 +83,17 @@ background-color: #2d2d37;
     text-decoration: line-through;
 }
 
+.footer-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;   
+}
+.footer-container p, a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
   /* media queries */
 
   @media screen and (max-width: 500px) {
@@ -98,5 +109,8 @@ background-color: #2d2d37;
      }
      .item {
          padding: 0;
+     }
+     .footer-container {
+         margin-top: 20%;
      }
   }

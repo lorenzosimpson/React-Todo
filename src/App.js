@@ -1,7 +1,9 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import Footer from './components/Footer';
 import './components/TodoComponents/Todo.css';
+
 
 const todoData = [];
 
@@ -72,6 +74,7 @@ class App extends React.Component {
           <TodoList todo={this.state.todo} toggleItem={this.toggleItem}/>
           <button onClick={this.clearCompleted}>Clear Completed</button>
         </div>
+        <Footer />
       </div>
     );
   }
