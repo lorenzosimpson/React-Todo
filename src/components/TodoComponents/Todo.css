@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+html {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background: #2d2d37
+    background: #2d2d37;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,6 +17,14 @@ h1, h2, h3, h4, h5, h6 {
 p {
     color: white;
     font-size: 2rem;
+}
+
+form {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
 }
 
 button {
@@ -41,7 +54,7 @@ background-color: #2d2d37;
   border: 0;
   padding: 6px 0;
   font-size: 1rem;
-  width: 370px;
+  width: 80%;
   outline: 0;
   color: white;
   border-bottom: 1px solid white;
@@ -51,6 +64,11 @@ background-color: #2d2d37;
 
 .add-btn {
     width: 100px;
+    
+}
+
+.todo-list-container {
+    min-height: 300px;
 }
 
 .item {
@@ -58,4 +76,24 @@ background-color: #2d2d37;
     padding: 1% 5%;
     width: 250px;
     text-align: center;
+    transition: 0.3s;
+  }
+.item.purchased {
+    background: darkseagreen;
+    text-decoration: line-through;
+}
+
+  /* media queries */
+
+  @media screen and (max-width: 500px) {
+     form {
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         margin: 0;
+         width: 90%;
+     }
+     button, .add-btn {
+         width: 270px;
+     }
   }

@@ -17,6 +17,7 @@ class TodoForm extends React.Component {
                     type="text"
                     value={this.item}
                     name="item"
+                    placeholder='Add an item'
                     onChange={this.props.handleChanges}>
                 </input>
                     <button className='add-btn'>Add</button>
