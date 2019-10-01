@@ -96,4 +96,7 @@ background-color: #2d2d37;
      button, .add-btn {
          width: 270px;
      }
+     .item {
+         padding: 0;
+     }
   }
